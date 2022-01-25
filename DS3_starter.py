@@ -7,7 +7,7 @@ class Dice:
     # it takes as input the number sides and if none is specified use 6
     # it sets the dice object's number of sides (instance variable)
     # it sets the list that tracks the rolls to the empty list (instance variable)
-    def __int__(self,num):
+    def __init__(self,num=6):
         
         self.num = num
         self.list = []
@@ -33,8 +33,9 @@ class Dice:
     def num_rolls(self):
         print("How many times do you want to roll?")
         x = input()
-        for i in range(x):
-            self.roll()
+        for i in range(int(x)):
+           n = self.roll()
+           print (n)
 
 
 
@@ -42,6 +43,13 @@ class Dice:
     # create the print_count_for_num method
     # it will count how many times the passed number has been rolled and print 
     # number was rolled x times - where number is the number and x is the count
+    def print_count_for_num(self,number):
+        res = 0
+        for i in range(len(self.list)):
+            if(self.list[i] == number):
+                res += 1
+        #return res
+        print(f"{number} was rolled {res} times")
 
 
 # main function
@@ -76,7 +84,7 @@ def main():
 
     # BONUS quiz
     # Print accumulation
-    #six_sided.print_count_for_num(3)
+    six_sided.print_count_for_num(3)
 
 if __name__ == "__main__":
     main()
