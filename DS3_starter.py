@@ -1,6 +1,6 @@
 # import the random module
 import random
-
+#Unique Name: Loriasun
 # create the class Dice
 class Dice:
     # create the constructor (__init__) method
